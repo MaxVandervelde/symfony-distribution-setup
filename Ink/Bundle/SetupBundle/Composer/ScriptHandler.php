@@ -7,9 +7,8 @@
  * @author    Maxwell Vandervelde <Max@MaxVandervelde.com>
  * @version   1.0.0
  * @copyright (c) 2013, Ink Applications
- * @license   http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
- *            Attribution-NonCommercial-ShareAlike 3.0 Unported
- *            Some Rights Reserved
+ * @license   MIT License (MIT)
+ *            http://opensource.org/licenses/MIT
  */
 
 namespace Ink\Bundle\SetupBundle\Composer;
