@@ -35,9 +35,9 @@ class ScriptHandler extends SymfonyScriptHandler
      *            The order that they should be looked for.
      */
     protected static $parameterFiles = array(
-        'parameters.yml.dist',
-        'parameters.xml.dist',
-        'parameters.php.dist',
+        'parameters.dist.yml',
+        'parameters.dist.xml',
+        'parameters.dist.php',
     );
 
     /**
@@ -52,6 +52,7 @@ class ScriptHandler extends SymfonyScriptHandler
      */
     public static function buildParameters($event)
     {
+        echo 'Building Parameters File';
         $options      = self::getOptions($event);
         $appDir       = $options['symfony-app-dir'];
         $distFile     = self::getParametersDistFile($appDir);
