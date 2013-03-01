@@ -12,7 +12,7 @@
  *            Some Rights Reserved
  */
 
-namespace Ink\SetupBundle\Composer;
+namespace Ink\Bundle\SetupBundle\Composer;
 
 use InvalidArgumentException;
 use RuntimeException;
@@ -88,7 +88,7 @@ class ScriptHandler extends SymfonyScriptHandler
                 'First parameter expected a path string'
             );
         }
-        
+
         $filePrefixPath = $appDir . DIRECTORY_SEPARATOR . 'config';
 
         foreach (static::$parameterFiles as $file) {
