@@ -7,8 +7,8 @@
  * @author    Maxwell Vandervelde <Max@MaxVandervelde.com>
  * @version   1.0.0
  * @copyright (c) 2013, Ink Applications
- * @license   MIT License (MIT)
- *            http://opensource.org/licenses/MIT
+ * @license   Apache 2.0
+ *            http://www.apache.org/licenses/LICENSE-2.0.html
  */
 
 namespace Ink\Bundle\SetupBundle\Composer;
@@ -106,5 +106,38 @@ class ScriptHandler extends SymfonyScriptHandler
         }
 
         throw new RuntimeException('Could not find parameters dist file');
+    }
+
+    /**
+     * Build .htaccess
+     *
+     * This is a hook for composer to build before Symfony is setup.
+     * If no .htaccess file is included in the project, It copies a htaccess
+     * distribution file in its place.
+     *
+     * @param  $event            The composer hook event
+     * @throws \RuntimeException Thrown when copy operation fails
+     */
+    public static function buildHtaccess($event) {
+        echo 'Building .htaccess File... ';
+        $options      = self::getOptions($event);
+        $webDir       = $options['symfony-web-dir'];
+        $distFile     = $webDir . DIRECTORY_SEPARATOR . '.dist.htaccess';
+        $destination  = $webDir . DIRECTORY_SEPARATOR . '.htaccess';
+
+        if (file_exists($destination)) {
+            echo 'Skipping. .htaccess already exists' . PHP_EOL;
+            return;
+        }
+
+        $copyStatus = copy($distFile, $destination);
+
+        if (!$copyStatus) {
+            throw new RuntimeException(
+                'Could not create .htaccess. File copy failed at: ' . $destination
+            );
+        }
+
+        echo 'Success' . PHP_EOL;
     }
 }
