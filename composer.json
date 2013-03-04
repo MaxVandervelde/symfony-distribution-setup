@@ -1,6 +1,6 @@
 {
-    "name": "ink/setup-bundle",
-    "description": "Symfony Framework distribution oriented setup bundle",
+    "name": "ink/symfony-distribution-setup",
+    "description": "Symfony Framework distribution oriented setup",
     "license": "MIT",
     "autoload": {
         "psr-0": { "": "" }
