@@ -3,7 +3,7 @@
     "description": "Symfony Framework distribution oriented setup",
     "license": "MIT",
     "autoload": {
-        "psr-0": { "": "" }
+        "psr-0": { "Ink": "src/" }
     },
     "require": {
         "php": ">=5.3.3",
