@@ -11,7 +11,7 @@
  *            http://opensource.org/licenses/MIT
  */
 
-namespace Ink\Bundle\SetupBundle\Composer;
+namespace Ink\Lib\Composer;
 
 use InvalidArgumentException;
 use RuntimeException;
