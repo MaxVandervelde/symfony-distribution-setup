@@ -1,11 +1,12 @@
 {
     "name": "ink/setup-bundle",
     "description": "Symfony Framework distribution oriented setup bundle",
+    "license": "MIT",
     "autoload": {
         "psr-0": { "": "" }
     },
     "require": {
         "php": ">=5.3.3",
-        "sensio/distribution-bundle": "2.1.*"
+        "sensio/distribution-bundle": "2.*"
     }
 }
